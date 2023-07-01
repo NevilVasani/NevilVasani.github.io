@@ -1,12 +1,16 @@
 * {
   margin: 0px;
   padding: 0px;
-  color: black;
+  color: white;
 }
 
 /* Body */
 body {
   background-color: #3399ff;
+  background-image: url(background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 
@@ -87,6 +91,10 @@ body {
     transform: scale(0.8);
   }
 }
+
+
+
+
 /*--------------------------------- ---------------------------------------------
 /* NavBar */
 nav {
@@ -168,22 +176,22 @@ main {
 .left-intro {
   display: flex;
   flex-direction: column;
-  margin-top: 113px;
+  margin-top: 201px;
   width: 75%;
 }
 .left-intro h1 {
-  color: black;
-  font-size: 1.7rem;
+  color: rgb(255, 255, 255);
+  font-size: 2.4rem;
   font-family: "Source Code Pro", monospace;
 }
 
 #name {
-  font-size: 1.7rem;
+  font-size: 2.4rem;
 }
 #element {
-  color: #03045e;
-  font-size: 2.1rem;
-  text-shadow: 2px 4px 9px #8d018db8;
+  color: #49c6f0;
+  font-size: 2.4rem;
+  text-shadow: 2px 4px 9px #3999f9b8;
 }
 
 .auto-write {
@@ -191,11 +199,48 @@ main {
   font-size: 2.1rem;
 }
 
-.description {
+#description {
   margin-top: 20px;
-  width: 41%;
+  width: 47%;
   display: flex;
   text-align: justify;
   font-family: "Titillium Web", sans-serif;
-  color: rgba(25, 20, 20, 0.775);
+  color: rgba(195, 195, 195, 0.775);
+}
+
+#download-cv{
+  transition: .5s;
+  flex-direction: row;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0);
+  border-width: 3px;
+  border-style: solid;
+  border-top-color:white ;
+  border-bottom-color:white ;
+  border-right-color: white;
+  border-left-color:white;
+  border-radius: 40px;
+  margin-top: 60px;
+  margin-right: auto;
+  width: auto;
+  margin-left: 85px;
+  padding: 14px 50px;
+  right: unset;
+  left: unset;
+  transform: translate(0%, 0%);
+  display: flex;
+  column-gap: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+}
+#download-cv:hover{
+  box-shadow: 1px 1px 4px 7px rgb(89, 152, 207);
+  background-image: linear-gradient(
+    -225deg,
+    #1a56e4 20%,
+    #44107a 29%,
+    #ff1361 67%,
+    #6fff00 100%
+  );
 }

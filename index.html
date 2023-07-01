@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon" />
     <title>Welcome To Nevil Vasani's Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mobile.css" />
@@ -39,29 +40,30 @@
 
     <main>
       <div class="background">
-        <div class="ripple-background">
+   <!--     <div class="ripple-background">
           <div class="circle xxlarge shade1"></div>
           <div class="circle xlarge shade2"></div>
           <div class="circle large shade3"></div>
           <div class="circle medium shade4"></div>
           <div class="circle small shade5"></div>
-        </div>        
+        </div>-->
       </div>
       <section class="introduction">
         <div class="left-intro">
           <h1 id="name">Hello I'm Nevil Vasani.</h1>
-          <br>
+          <br />
           <h1>I'm <span id="element"></span></h1>
-          <p class="description">
-            Dedicated to expanding my knowledge and skills in the ever-evolving world of technology. With a passion for problem-solving and a keen eye for detail, I am committed to learning various programming languages, networking concepts, and software development practices. Through my studies, I strive to become a well-rounded IT professional ready to tackle challenges and contribute to the advancement of the industry.
-          </p>
-          
+          <div id="description">
+            Blending technical prowess with a creative mindset to craft extraordinary solutions that transcend boundaries and inspire progress.
+          </div>
+          <button id="download-cv" type="button" onclick="downloadfile()"><i class="fa fa-download"></i> Download-CV</button>
         </div>
       </section>
     </main>
+
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
-      var typed = new Typed('#element', {
+      var typed = new Typed("#element", {
         strings: [
           "Web Developer",
           "Software Developer",
@@ -70,8 +72,12 @@
           "Volleyball Player",
         ],
         typeSpeed: 70,
-        loop: true 
-      })
+        loop: true,
+      });
+
+      function downloadfile() {
+        window.open("https://drive.google.com/uc?export=download&id=1-u9Wh1D5xycO1XfrnxmDR6IOYABH7A4w")
+      }
     </script>
   </body>
 </html>
