@@ -1,132 +1,77 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <style>
-        table {
-          border-collapse: collapse;
-          width: 100%;
-        }
-        th, td {
-          border: 1px solid black;
-          padding: 8px;
-          text-align: left;
-        }
-      </style>
-	<title>Form Registration</title>
-</head>
-<body>
-	<h1>Form Registration</h1>
-	<form onsubmit="return submitForm(event)" novalidate>
-		<label>Name:</label><input type="text" id="name" required><br><br>
-		<label>Email:</label><input type="email" id="email" required><br><br>
-		<label>Password:</label><input type="password" id="password" required><br><br>
-		<label>Date of Birth:</label><input type="date" id="dob" required><br><br>
-		<input type="checkbox" id="terms" required>I accept the terms and conditions<br><br>
-		<button type="submit">Submit</button>
-	</form>
-    <table id="data-table">
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Dob</th>
-            <th>Accepted terms?</th>
-        </tr>
-    </table>
-    
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <title>Welcome To Nevil Vasani's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mobile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="Navbar">
+        <div class="left-navbar">
+          <span id="logo">Nevil Vasani</span>
+        </div>
+        <div class="right-navbar">
+          <ul>
+            <li><a href="">Home</a></li>
+            <li>
+              <a href="" class="smooth-scroll">ContactMe</a>
+            </li>
+            <li><a href="" target="_blank">Projects</a></li>
+            <li>
+              <a href="" class="smooth-scroll">Certificates</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="background">
+        <div class="ripple-background">
+          <div class="circle xxlarge shade1"></div>
+          <div class="circle xlarge shade2"></div>
+          <div class="circle large shade3"></div>
+          <div class="circle medium shade4"></div>
+          <div class="circle small shade5"></div>
+        </div>        
+      </div>
+      <section class="introduction">
+        <div class="left-intro">
+          <h1 id="name">Hello I'm Nevil Vasani.</h1>
+          <br>
+          <h1>I'm <span id="element"></span></h1>
+          <p class="description">
+            Dedicated to expanding my knowledge and skills in the ever-evolving world of technology. With a passion for problem-solving and a keen eye for detail, I am committed to learning various programming languages, networking concepts, and software development practices. Through my studies, I strive to become a well-rounded IT professional ready to tackle challenges and contribute to the advancement of the industry.
+          </p>
+          
+        </div>
+      </section>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
-var data = [];
-
-       
-        function submitForm(event) {
-            event.preventDefault();
-            
-            
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-            var dob = document.getElementById("dob").value;
-            var terms = document.getElementById("terms").checked;
-            
-            // validate age
-            var today = new Date();
-            var birthDate = new Date(dob);
-            var age = today.getFullYear() - birthDate.getFullYear();
-            var m = today.getMonth() - birthDate.getMonth();
-            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                age--;
-            }
-            if (age < 18 || age > 55) {
-                alert("Age must be between 18 to 55 years");
-                return false;
-            }
-            if(name == null || name == "")
-            {
-                alert("Name must be filled!");
-                return false;
-            }
-            if(password == null || password == ""){
-                alert("password must be filled!");
-                return false;
-            }
-            if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)))
-            {
-                alert("You have entered an invalid email address!")
-                return false;
-            }
-            if(!terms){
-                alert("you must check this!");
-                return false;
-            }
-
-            
-            data.push({
-                name: name,
-                email: email,
-                password: password,
-                dob: dob,
-                terms: terms
-            });
-            localStorage.setItem("data", JSON.stringify(data));
-            
-            var table = document.getElementById("data-table");
-            var row = table.insertRow();
-            var cell1 =row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-            var cell4 = row.insertCell(3);
-            var cell5 = row.insertCell(4);
-            cell1.innerHTML = name;
-            cell2.innerHTML = email;
-            cell3.innerHTML = password;
-            cell4.innerHTML = dob;
-            cell5.innerHTML = terms;
-            
-}
-
-		window.onload = function() {
-        
-        if (localStorage.getItem("data")) {
-                data = JSON.parse(localStorage.getItem("data"));
-            }
-		if (data) {
-			var table = document.getElementById("data-table");
-			for (var i = 0; i < data.length; i++) {
-				var row = table.insertRow();
-				var cell1 = row.insertCell(0);
-				var cell2 = row.insertCell(1);
-				var cell3 = row.insertCell(2);
-				var cell4 = row.insertCell(3);
-				var cell5 = row.insertCell(4);
-				cell1.innerHTML = data[i].name;
-				cell2.innerHTML = data[i].email;
-				cell3.innerHTML = data[i].password;
-				cell4.innerHTML = data[i].dob;
-				cell5.innerHTML = data[i].terms;
-			}
-		}
-	}
-</script>
-</body>
+      var typed = new Typed('#element', {
+        strings: [
+          "Web Developer",
+          "Software Developer",
+          "Wordpress Developer",
+          "Logo Designer",
+          "Volleyball Player",
+        ],
+        typeSpeed: 70,
+        loop: true 
+      })
+    </script>
+  </body>
 </html>
-    

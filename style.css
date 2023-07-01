@@ -1,0 +1,201 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  color: black;
+}
+
+/* Body */
+body {
+  background-color: #3399ff;
+}
+
+
+/*background*/
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: ripple 15s infinite;
+  box-shadow: 0px 0px 1px 0px #508fb9;
+}
+
+.small {
+  width: 200px;
+  height: 200px;
+  left: -100px;
+  bottom: -100px;
+}
+
+.medium {
+  width: 400px;
+  height: 400px;
+  left: -200px;
+  bottom: -200px;
+}
+
+.large {
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
+}
+
+.xlarge {
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
+}
+
+.xxlarge {
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
+}
+
+.shade1 {
+  opacity: 0.2;
+}
+.shade2 {
+  opacity: 0.5;
+}
+
+.shade3 {
+  opacity: 0.7;
+}
+
+.shade4 {
+  opacity: 0.8;
+}
+
+.shade5 {
+  opacity: 0.9;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
+/*--------------------------------- ---------------------------------------------
+/* NavBar */
+nav {
+  background-color: rgb(121 215 234);
+  backdrop-filter: blur(100px);
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  justify-content: space-between;
+}
+nav div {
+  margin: 12px 19px;
+}
+#logo {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Martian Mono", monospace;
+  text-transform: uppercase;
+}
+
+#logo:hover {
+  background-image: linear-gradient(
+    -225deg,
+    #1a56e4 20%,
+    #44107a 29%,
+    #ff1361 67%,
+    #6fff00 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  text-shadow: 4px 2px 9px rgb(72, 0, 255);
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.right-navbar ul {
+  display: flex;
+}
+.right-navbar ul li {
+  list-style: none;
+  margin-top: 5px;
+}
+.right-navbar ul li a {
+  color: black;
+  padding: 4px 25px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-family: "Martian Mono", monospace;
+}
+.right-navbar ul li a:hover {
+  font-size: 1.1rem;
+  text-shadow: 2px 2px rgba(8, 66, 202, 0.277);
+}
+/*---------------------------------------------------------------------------------*/
+main {
+  margin-top: 53px;
+}
+
+.introduction {
+  display: flex;
+  justify-content: space-around;
+}
+
+.left-intro {
+  display: flex;
+  flex-direction: column;
+  margin-top: 113px;
+  width: 75%;
+}
+.left-intro h1 {
+  color: black;
+  font-size: 1.7rem;
+  font-family: "Source Code Pro", monospace;
+}
+
+#name {
+  font-size: 1.7rem;
+}
+#element {
+  color: #03045e;
+  font-size: 2.1rem;
+  text-shadow: 2px 4px 9px #8d018db8;
+}
+
+.auto-write {
+  color: black;
+  font-size: 2.1rem;
+}
+
+.description {
+  margin-top: 20px;
+  width: 41%;
+  display: flex;
+  text-align: justify;
+  font-family: "Titillium Web", sans-serif;
+  color: rgba(25, 20, 20, 0.775);
+}
