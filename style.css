@@ -19,7 +19,7 @@ body {
 .circle {
   position: absolute;
   border-radius: 50%;
-  background: white;
+  background: rgba(255, 255, 255, 0.223);
   animation: ripple 15s infinite;
   box-shadow: 0px 0px 1px 0px #508fb9;
 }
@@ -201,7 +201,7 @@ main {
 
 #description {
   margin-top: 20px;
-  width: 47%;
+  width: 43%;
   display: flex;
   text-align: justify;
   font-family: "Titillium Web", sans-serif;
@@ -221,9 +221,9 @@ main {
   border-left-color:white;
   border-radius: 40px;
   margin-top: 60px;
-  margin-right: auto;
+  margin-right: 745px;
   width: auto;
-  margin-left: 85px;
+  margin-left: auto;
   padding: 14px 50px;
   right: unset;
   left: unset;
@@ -244,3 +244,4 @@ main {
     #6fff00 100%
   );
 }
+
